@@ -1,4 +1,4 @@
-package com.codelab.parte_2.data.local.entity
+package com.codelab.parte_2.entity
 
 enum class EstadoColor {
     ROJO,        // potrero con ganado
