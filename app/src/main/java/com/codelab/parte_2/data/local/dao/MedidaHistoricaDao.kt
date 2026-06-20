@@ -1,7 +1,7 @@
 package com.codelab.parte_2.data.local.dao
 
 import androidx.room.*
-import com.codelab.parte_2.data.local.entity.MedidaHistorica
+import com.codelab.parte_2.entity.MedidaHistorica
 import kotlinx.coroutines.flow.Flow
 
 @Dao

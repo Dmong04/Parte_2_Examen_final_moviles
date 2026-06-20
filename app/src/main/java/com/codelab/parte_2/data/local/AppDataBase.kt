@@ -8,9 +8,9 @@ import androidx.room.TypeConverters
 import com.codelab.parte_2.data.local.dao.EstadoRotacionDao
 import com.codelab.parte_2.data.local.dao.MedidaHistoricaDao
 import com.codelab.parte_2.data.local.dao.PotreroDao
-import com.codelab.parte_2.data.local.entity.EstadoRotacion
-import com.codelab.parte_2.data.local.entity.MedidaHistorica
-import com.codelab.parte_2.data.local.entity.Potrero
+import com.codelab.parte_2.entity.EstadoRotacion
+import com.codelab.parte_2.entity.MedidaHistorica
+import com.codelab.parte_2.entity.Potrero
 
 @Database(
     entities = [Potrero::class, EstadoRotacion::class, MedidaHistorica::class],

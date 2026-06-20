@@ -1,4 +1,4 @@
-package com.codelab.parte_2.data.local.entity
+package com.codelab.parte_2.entity
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
@@ -6,7 +6,7 @@ import androidx.room.Index
 import androidx.room.PrimaryKey
 
 @Entity(
-    tableName = "medida_historica",
+    tableName = "estado_rotacion",
     foreignKeys = [
         ForeignKey(
             entity = Potrero::class,
@@ -17,10 +17,11 @@ import androidx.room.PrimaryKey
     ],
     indices = [Index("potreroId")]
 )
-data class MedidaHistorica(
+data class EstadoRotacion(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val potreroId: Int,
-    val medidaM2: Double,
-    val fechaRegistro: Long
+    val color: EstadoColor,
+    val fechaInicio: Long,
+    val fechaFin: Long? = null
 )

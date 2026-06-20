@@ -1,16 +1,13 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.ksp)   // ← agregar
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.android)   // ← agregar
 }
 
 android {
     namespace = "com.codelab.parte_2"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.codelab.parte_2"
@@ -24,9 +21,7 @@ android {
 
     buildTypes {
         release {
-            optimization {
-                enable = false
-            }
+            isMinifyEnabled = false
         }
     }
     compileOptions {
@@ -35,6 +30,9 @@ android {
     }
     buildFeatures {
         compose = true
+    }
+    kotlinOptions {
+        jvmTarget = "11"
     }
 }
 
@@ -53,7 +51,11 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
+    // unit tests
     testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
+
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     androidTestImplementation(libs.androidx.espresso.core)
