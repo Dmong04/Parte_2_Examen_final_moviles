@@ -1,0 +1,22 @@
+<resources>
+    <string name="title_rotacion">Rotación de potreros</string>
+
+    <string name="estado_rojo_label">Con ganado</string>
+    <string name="estado_anaranjado_label">En recuperación</string>
+    <string name="estado_verde_label">Disponible</string>
+
+    <string name="btn_cargar_ganado">Cargar con ganado</string>
+    <string name="btn_cambiar_fecha">Cambiar fecha</string>
+    <string name="titulo_seleccionar_fecha">Seleccionar fecha</string>
+    <string name="fecha_seleccionada_format">Fecha: %1$s</string>
+
+    <string name="cargando_historico">Cargando histórico…</string>
+    <string name="sin_historico">Sin histórico todavía</string>
+    <string name="fecha_vigente">vigente</string>
+    <string name="expandir_historico_desc">Expandir histórico</string>
+
+    <string name="msg_cargar_ganado_ok">Ganado cargado correctamente</string>
+    <string name="msg_cargar_ganado_vacio">Seleccioná al menos un potrero disponible</string>
+
+    <string name="menu_rotacion">Rotación de potreros</string>
+</resources>

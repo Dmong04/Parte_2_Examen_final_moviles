@@ -50,6 +50,12 @@
 
         <!-- Pantalla 3 (Mendo): agregar acá su <activity> cuando la cree -->
 
+        <activity
+            android:name=".ui.rotacion.RotacionActivity"
+            android:exported="false"
+            android:label="@string/title_rotacion"
+            android:theme="@style/Theme.Parte_2" />
+
     </application>
 
 </manifest>

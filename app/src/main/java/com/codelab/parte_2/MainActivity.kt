@@ -18,6 +18,7 @@ import com.codelab.parte_2.ui.main.PotreroAdapter
 import com.codelab.parte_2.ui.main.PotreroListViewModel
 import com.codelab.parte_2.ui.main.PotreroListViewModelFactory
 import kotlinx.coroutines.launch
+import com.codelab.parte_2.ui.rotacion.RotacionActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -51,6 +52,9 @@ class MainActivity : AppCompatActivity() {
     private fun setupFab() {
         binding.fabAddPotrero.setOnClickListener {
             abrirFormulario(potrero = null)
+        }
+        binding.fabRotacion.setOnClickListener {
+            startActivity(Intent(this, RotacionActivity::class.java))
         }
     }
 

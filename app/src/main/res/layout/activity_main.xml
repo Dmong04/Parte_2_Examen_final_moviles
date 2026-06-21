@@ -24,6 +24,18 @@
         android:visibility="gone" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabRotacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="88dp"
+        android:contentDescription="@string/menu_rotacion"
+        app:srcCompat="@drawable/ic_rotacion"
+        app:tint="@android:color/white"
+        app:backgroundTint="?attr/colorSecondary" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddPotrero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

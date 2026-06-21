@@ -16,7 +16,7 @@ interface EstadoRotacionDao {
     @Delete
     suspend fun eliminar(estado: EstadoRotacion)
 
-    @Query("SELECT * FROM estado_rotacion WHERE potreroId = :potreroId ORDER BY fechaInicio DESC")
+    @Query("SELECT * FROM estado_rotacion WHERE potreroId = :potreroId ORDER BY fechaInicio DESC, id DESC")
     fun obtenerHistoricoPorPotrero(potreroId: Int): Flow<List<EstadoRotacion>>
 
     @Query("""
@@ -24,13 +24,13 @@ interface EstadoRotacionDao {
         WHERE potreroId = :potreroId 
         AND fechaInicio <= :fecha 
         AND (fechaFin IS NULL OR fechaFin >= :fecha)
-        ORDER BY fechaInicio DESC LIMIT 1
+        ORDER BY fechaInicio DESC, id DESC LIMIT 1
     """)
     suspend fun obtenerEstadoEnFecha(potreroId: Int, fecha: Long): EstadoRotacion?
 
-    @Query("SELECT * FROM estado_rotacion WHERE potreroId = :potreroId ORDER BY fechaInicio DESC LIMIT 1")
+    @Query("SELECT * FROM estado_rotacion WHERE potreroId = :potreroId ORDER BY fechaInicio DESC, id DESC LIMIT 1")
     suspend fun obtenerUltimoEstado(potreroId: Int): EstadoRotacion?
 
-    @Query("SELECT * FROM estado_rotacion ORDER BY fechaInicio DESC")
+    @Query("SELECT * FROM estado_rotacion ORDER BY fechaInicio DESC, id DESC")
     fun obtenerTodos(): Flow<List<EstadoRotacion>>
 }
