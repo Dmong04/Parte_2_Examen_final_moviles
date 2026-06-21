@@ -1,0 +1,17 @@
+<resources>
+    <!-- Estas son ADICIONES — se mergean automáticamente con tu strings.xml existente,
+         no hace falta tocar ese archivo (Android junta todo lo que esté en res/values/) -->
+
+    <string name="title_form_potrero">Potrero</string>
+
+    <string name="empty_potreros">No hay potreros registrados.\nTocá + para agregar uno.</string>
+    <string name="fab_add_potrero_desc">Agregar potrero</string>
+
+    <string name="dialog_delete_title">Eliminar potrero</string>
+    <string name="dialog_delete_message">¿Seguro que querés eliminar \"%1$s\"? También se borrará todo su historial de rotación y medidas.</string>
+    <string name="dialog_delete_positive">Eliminar</string>
+    <string name="dialog_delete_negative">Cancelar</string>
+
+    <string name="potrero_medida_format">%1$.0f m²</string>
+    <string name="potrero_fecha_format">Creado: %1$s</string>
+</resources>
