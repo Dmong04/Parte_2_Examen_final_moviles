@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Parte_2">
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -19,10 +20,18 @@
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Pantalla 2 — placeholder para que la navegación compile -->
+        <activity
+            android:name=".FormPotreroActivity"
+            android:exported="false"
+            android:label="@string/title_form_potrero"
+            android:theme="@style/Theme.Parte_2"
+            android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>
