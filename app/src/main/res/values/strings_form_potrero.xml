@@ -1,0 +1,31 @@
+<resources>
+    <string name="title_nuevo_potrero">Nuevo potrero</string>
+    <string name="title_editar_potrero">Editar potrero</string>
+
+    <string name="hint_nombre">Nombre del potrero</string>
+    <string name="hint_medida">Medida (m²)</string>
+
+    <string name="label_foto">Foto</string>
+    <string name="label_video">Video</string>
+    <string name="sin_video">Sin video seleccionado</string>
+    <string name="video_seleccionado">Video listo para guardar</string>
+
+    <string name="btn_tomar_foto">Tomar foto</string>
+    <string name="btn_elegir_foto">Elegir foto</string>
+    <string name="btn_grabar_video">Grabar video</string>
+    <string name="btn_elegir_video">Elegir video</string>
+    <string name="btn_ver_video">Ver video</string>
+    <string name="btn_guardar">Guardar</string>
+
+    <string name="content_desc_foto">Foto del potrero</string>
+
+    <string name="error_nombre_vacio">Ingresá un nombre</string>
+    <string name="error_medida_invalida">Ingresá una medida válida mayor a 0</string>
+    <string name="error_permiso_camara">Necesitamos permiso de cámara para esto</string>
+    <string name="error_copiar_archivo">No se pudo procesar el archivo elegido</string>
+    <string name="error_sin_reproductor">No hay una app instalada para reproducir el video</string>
+    <string name="error_potrero_no_encontrado">No se encontró el potrero</string>
+
+    <string name="msg_guardado_ok">Potrero guardado</string>
+    <string name="msg_guardado_error">Ocurrió un error al guardar</string>
+</resources>
