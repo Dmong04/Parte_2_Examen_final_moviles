@@ -58,17 +58,21 @@ class RotacionViewModel(
         initialValue = emptyList()
     )
 
-    /**
-     * De todos los EstadoRotacion de un potrero, busca el que corresponde
-     * a la fecha de consulta: el más reciente cuyo fechaInicio sea <= fecha.
-     * (No usamos fechaFin acá porque ese campo solo se "cierra" cuando el
-     * usuario carga ganado de nuevo; el cálculo de vencimiento por días lo
-     * hace RotacionCalculator, no esta búsqueda).
-     */
     private fun estadoVigenteEnFecha(estados: List<EstadoRotacion>, fecha: Long): EstadoRotacion? {
         return estados
-            .filter { it.fechaInicio <= fecha }
-            .maxWithOrNull(compareBy({ it.fechaInicio }, { it.id }))
+            .filter { normalizarADiaUtc(it.fechaInicio) <= fecha }
+            .maxWithOrNull(compareBy({ normalizarADiaUtc(it.fechaInicio) }, { it.id }))
+    }
+
+    /** Trunca un timestamp a medianoche UTC de su propio día calendario. */
+    private fun normalizarADiaUtc(millis: Long): Long {
+        val cal = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("UTC"))
+        cal.timeInMillis = millis
+        cal.set(java.util.Calendar.HOUR_OF_DAY, 0)
+        cal.set(java.util.Calendar.MINUTE, 0)
+        cal.set(java.util.Calendar.SECOND, 0)
+        cal.set(java.util.Calendar.MILLISECOND, 0)
+        return cal.timeInMillis
     }
 
     fun seleccionarFecha(fechaMillis: Long) {

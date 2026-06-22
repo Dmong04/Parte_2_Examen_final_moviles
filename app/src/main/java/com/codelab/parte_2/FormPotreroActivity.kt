@@ -49,7 +49,7 @@ class FormPotreroActivity : AppCompatActivity() {
 
     private val potreroId: Int by lazy { intent.getIntExtra(EXTRA_POTRERO_ID, -1) }
 
-    private var fechaCreacion: Long = System.currentTimeMillis()
+    private var fechaCreacion: Long = hoyNormalizadoUtc()
     private var fotoUri: Uri? = null
     private var videoUri: Uri? = null
 
@@ -327,6 +327,15 @@ class FormPotreroActivity : AppCompatActivity() {
 
     private fun mostrarMensaje(mensaje: String) {
         Snackbar.make(binding.root, mensaje, Snackbar.LENGTH_SHORT).show()
+    }
+
+    private fun hoyNormalizadoUtc(): Long {
+        val cal = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("UTC"))
+        cal.set(java.util.Calendar.HOUR_OF_DAY, 0)
+        cal.set(java.util.Calendar.MINUTE, 0)
+        cal.set(java.util.Calendar.SECOND, 0)
+        cal.set(java.util.Calendar.MILLISECOND, 0)
+        return cal.timeInMillis
     }
 
     companion object {
